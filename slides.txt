@@ -1,0 +1,110 @@
+
+
+---
+
+
+
+---
+
+Speaker notes:
+  ### What this session is not...
+  - a guide to privacy and security best practices (with and without Tor)
+  - historical overview of Tor (and its U.S. military funding)
+  - ethical debates about free speech and Tor
+
+  ...though there are many interesting and important spaces where these conversations are happening.
+
+We're all experts! Feel free to chime in. If you ask me a question I can't answer, I'll look it up later and post the answer.
+
+  If there's time:
+
+    Why am I leading this session?
+
+    I learned about Tor because I was building a browser-based tool (aka a website) and I wanted to distribute it through technology that was structurally more relational than having a Hosted Website.
+
+    What power dynamics are structurally embedded in the internet as I know it? How might the technology of networks be more relational? How might I more actively participate as a viewer and co-creater in the internet?
+
+---
+
+TODO: If time, add p2p and decentralized definitions
+
+Extra notes:
+  With HTTPS, the data that the client sends with its request to the server is encrypted, so only the client and the server can read it.
+
+---
+
+From The Tor Project:
+  The primary goal of Tor is to improve your privacy by sending your traffic through a series of proxies. It aims to solve three privacy concerns:
+
+  - First, Tor prevents websites and other services from learning your location, which they can use to build databases about your habits and interests.
+  - Second, Tor prevents people watching your traffic locally (such as your ISP or someone with access to your home wifi or router) from learning what information you're fetching and where you're fetching it from. It also stops them from deciding what you're allowed to learn and publish.
+  - Third, Tor routes your connection through more than one Tor relay so no single relay can learn what you're up to. Because these relays are run by different individuals or organizations, distributing trust provides more security than the old one hop proxy approach.
+
+---
+
+Both the Tor network and onion sites are run through core `tor` or little-t Tor.
+
+Their stated mission is:
+  > To advance human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.
+
+---
+
+Ask people if they'd like to review how the Internet works! This slide could be skipped depending on time and everyone's knowledge.
+
+  In particular, your local ISP is in the position to build a complete profile of your Internet usage. In addition, every server in the Internet that can see any of the packets can profile your behavior.
+
+  Excerpted from here:  http://rzuwtpc4wb3xdzrj3yeajsvm3fkq4vbeubm2tdxaqruzzzgs5dwemlad.onion/index.html#protections
+
+---
+
+From Catnip guide:
+  Any computer can run the Tor software and become a node. Think of Tor nodes like data checkpoints which take in, treat, and ship out packets traveling over the Tor network.
+  
+  Using Tor, data packets are sent over the Internet’s infrastructure like any other packet. But packets traveling through the Tor network are routed randomly through three nodes (also called relays or hops) before reaching their final destination.
+  
+  This route, called Tor circuit, is changed every ten minutes to make it harder to observe for potential eavesdroppers. To route the packets down a random path, they are packed like an onion: each is wrapped into three encrypted layers containing a dedicated packet tag. But only a partial route is encoded on these tags, so that none of the relays know the entire path a packet takes. At each relay a single layer is peeled off and the packet is then sent to the next relay written on the tag of the underlying layer. This unwrapping and preparing to relay the packets is managed by the Tor software of the node. 
+  
+  All that is visible from the outside is that obscure cargo is sent from place to place. Because of this, the Tor network is often pejoratively called the “dark net”. When we say that Tor packet layers are encrypted, it means that only the relay with the correct private encryption key is able to unwrap the corresponding layer.
+
+---
+
+From The Tor Project:
+  Tor works by sending your traffic through three random servers (which are called `relays`) in the Tor network. The first relay in the circuit is called a guard relay, and the last relay (called the exit relay) then sends traffic out onto the public internet. 
+
+  There are three layers of encryption, one per node, so each relay only knows where the next location that it's sending the request. (Like a relay race!) Relays are run by volunteers throughout the world (so there's distributed trust) and they have IP addresses that are listed publically.
+
+  *FAQ from the Tor Project*
+  Q: What attacks remain against onion routing?
+
+  A: As mentioned above, it is possible for an observer who can view both you and either the destination website or your Tor exit node to correlate timings of your traffic as it enters the Tor network and also as it exits. Tor does not defend against such a threat model.
+
+  In a more limited sense, note that if a censor or law enforcement agency has the ability to obtain specific observation of parts of the network, it is possible for them to verify a suspicion that you talk regularly to your friend by observing traffic at both ends and correlating the timing of only that traffic. Again, this is only useful to verify that parties already suspected of communicating with one another are doing so. In most countries, the suspicion required to obtain a warrant already carries more weight than timing correlation would provide.
+
+  Furthermore, since Tor reuses circuits for multiple TCP connections, it is possible to associate non anonymous and anonymous traffic at a given exit node, so be careful about what applications you run concurrently over Tor. Perhaps even run separate Tor clients for these applications.
+
+---
+
+Onion sites are also great for network health and sustainability, bc they don't add to the traffic on exit nodes, where there can be bottlenecks. When a user visits a particular onion, they know that the content they are seeing can only come from that particular onion. (No man-in-the-middle DNS attacks are possible.)
+
+  Onion mirrors (NYTimes, Markup, Facebook, Twitter) also make sure that sites are accessible where they might be censored.
+
+   TODO: Add a note about p2p uses!
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+

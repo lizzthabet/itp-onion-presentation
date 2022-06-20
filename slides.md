@@ -45,9 +45,12 @@ color: #343333
 <br />
 <br />
 <br />
+<br />
+<br />
+<br />
 
-The slides: [TODO]
-The demo code: https://github.com/lizzthabet/itp-camp-demo
+The slides: https://github.com/lizzthabet/itp-onion-presentation
+The demo code: https://github.com/lizzthabet/itp-onion-demo
 
 ---
 <!-- header: 🧅 An introduction to Tor -->
@@ -74,7 +77,7 @@ There will be two demo options: one more beginner and one more intermediate. If 
 
 # What we'll do today
 
-Tor is a free and open-source software for (more) anonymous communication.
+Tor is a free and open source software for (more) anonymous communication.
 
 ## Goals
 - Pique your curiosity about networking and the internet
@@ -94,53 +97,52 @@ Tor is a free and open-source software for (more) anonymous communication.
 
 - Demo checklist (✅)
 - Define our goals (✅)
-- What is Tor exactly?
-- Brief overview of the Internet (as we know it) works
+- Review common terms and why you'd use Tor
+- Break down the Tor ecosystem
+- Overview of the Internet (as we know it) works
 - The Tor network
 - The magic of onion sites
 - Share One Thing! onion site demo
 - Further resources
 
-## Why am I leading this session?
-[TODO]: Decide to cut this section based on time
-
 <!-- 
-  I learned about Tor because I was building a browser-based tool (aka a website) and I wanted to distribute it through technology that was structurally more relational than having a Hosted Website.
-
-  What do I take for granted in my understanding of the internet, the "modern web, "and networks? What power dynamics are structurally embedded in the internet as I know it? How might the technology of networks be more relational? How might I have more agency as a user of networks?
-
   We're all experts! Feel free to chime in. If you ask me a question I can't answer, I'll look it up later and post the answer.
-  Much of this text is borrowed and adapted from The Tor Project and I'll include links to more detailed information.
+
+  If there's time:
+
+    Why am I leading this session?
+
+    I learned about Tor because I was building a browser-based tool (aka a website) and I wanted to distribute it through technology that was structurally more relational than having a Hosted Website.
+
+    What power dynamics are structurally embedded in the internet as I know it? How might the technology of networks be more relational? How might I more actively participate as a viewer and co-creater in the internet?
 -->
 
 ---
-# What is Tor?
 
-The term `Tor` can be used to reference several different things. Let's break that down.
+# Let's define some terms
 
-## 🌐 The onion network (The Tor circuit)
-A network of virtual tunnels that allow you to improve your privacy and security on the internet. I'll use it to refer to the virtual + physical infrastructure of servers and how a client's request is routed to its destination.
+But first, let's define some general terms and concepts.
 
-## 🔗 Onion sites
-A website that's only accessible over the Tor network.
+In a **client-server model** of networking, the client is the device that sends a request for data to the server through a network, and the server is the device that accepts the request and delivers the requested data packets to the client.
 
-## 🖥 The Tor browser
-A version of Firefox that uses the Tor network to access the internet (clearnet) and onion sites. It makes other privacy improvements, like preventing websites "fingerprinting" your device. By default, it doesn't keep any browsing history and cookies are only valid for a single session.
+<!-- TODO: If time, add p2p and decentralized definitions -->
 
-## 👥 The Tor Project
-The 501(c)(3) nonprofit organization that develops free and open source Tor software.
+The client and server communicate in an agreed-upon language called a **protocol**. (Examples of protocols you'll hear about include TCP, HTTP, and HTTPS.)
 
-<!-- Both the Tor network and onion sites are run through core `tor` or little-t Tor. -->
-<!-- 
-  Their stated mission is:
-  > To advance human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.
+Each device on a network has a unique **IP address**, which is like a mailing address, that can identify and locate that device.
+
+A **proxy** is another server that acts as an intermediary between clients and servers. A forward proxy (that forwards a request) is also called a tunnel or a gateway.
+
+
+<!-- Extra notes:
+  With HTTPS, the data that the client sends with its request to the server is encrypted, so only the client and the server can read it.
 -->
+
 ---
 
-<!-- TODO: There are many reasons why you might use Tor or technology like it -->
-[TODO]: Consider moving this slide to later or combining it with later slide
+# Why use Tor?
 
-# Why would you use Tor?
+When you use the Tor network, your internet service provider (ISP) won't be able to track the names and addresses of the websites you visit, instead they'll only see you're connecting to the Tor network. And the websites you visit will see a connection coming from the Tor network instead of your real IP address.
 
 There are many reasons why someone might use Tor, including:
 - To obscure your information from third-party data collection and tracking
@@ -150,59 +152,75 @@ There are many reasons why someone might use Tor, including:
 
 ... and other reasons!
 
-There are also many caveats to the benefits of using Tor, which we'll talk about if we have time.
+There are also many caveats to using Tor, which we'll talk about if we have time.
+
+<!-- 
+  From The Tor Project:
+  The primary goal of Tor is to improve your privacy by sending your traffic through a series of proxies. It aims to solve three privacy concerns:
+
+  - First, Tor prevents websites and other services from learning your location, which they can use to build databases about your habits and interests.
+  - Second, Tor prevents people watching your traffic locally (such as your ISP or someone with access to your home wifi or router) from learning what information you're fetching and where you're fetching it from. It also stops them from deciding what you're allowed to learn and publish.
+  - Third, Tor routes your connection through more than one Tor relay so no single relay can learn what you're up to. Because these relays are run by different individuals or organizations, distributing trust provides more security than the old one hop proxy approach.
+-->
+
+---
+# What is Tor?
+
+The term `Tor` can be used to reference several different things. Let's break that down.
+
+## 🌐 The onion network (The Tor circuit)
+A network of virtual tunnels that allow you to improve your privacy and security on the Internet. I'll generally use "Tor" to refer to this virtual + physical infrastructure of servers and how a client's request for content is routed to its destination.
+
+## 🔗 Onion sites
+Websites that are only accessible over the Tor network.
+
+## 🖥 The Tor browser
+A version of Firefox that uses the Tor network to access the Internet and onion sites. It makes other privacy improvements, like preventing websites "fingerprinting" your device. By default, it doesn't keep any browsing history and cookies are only valid for a single session.
+
+## 👥 The Tor Project
+The 501(c)(3) nonprofit organization that develops free and open source Tor software.
+
+<!-- Both the Tor network and onion sites are run through core `tor` or little-t Tor. -->
+<!-- 
+  Their stated mission is:
+  > To advance human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.
+-->
 
 ---
 
-# Overview of the Clearnet
+# Overview of the Internet (as we know it)
 
 We're going to borrow from [this wonderful guide](https://catnip.article19.org/data/ARTICLE19-Catnip-Tor-Network-2021-web.pdf) from 🌈 Catnip Explains 🌈.
 
 ![width:850px](./images/catnip-01-internet.png)
 
-<!-- Some extra notes if I want them:
-  Basic model: there is a client, which requests content, and a server, which provides the requested content.
-  The client and server communicate in an agreed-upon language, called a protocol. In this case the protocal is HTTP/HTTPS, which is built on top of a protocol called TCP.
-  Every device on a network has an IP address, which is like a unique mailing address.
-  When a client makes a request to itp.nyu.edu/, it needs to know what server to request that data from. Servers are available at IP addresses (mailing address), and it will go to what's called a DNS server to see what IP address itp.nyu.edu corresponds to.
-  The server responds with content.
-  With HTTPS, the data that the client sends with its request to the server is encrypted, so only the client and the server can read it.
+<!--
+  Ask people if they'd like to review how the Internet works! This slide could be skipped depending on time and everyone's knowledge.
 
-  In this model... (talk about the features that Tor is trying to solve)
-
-  Internet communication is based on a store-and-forward model that can be understood in analogy to postal mail: Data is transmitted in blocks called IP datagrams or packets. Every packet includes a source IP address (of the sender) and a destination IP address (of the receiver), just as ordinary letters contain postal addresses of sender and receiver. The way from sender to receiver involves multiple hops of routers, where each router inspects the destination IP address and forwards the packet closer to its destination. Thus, every router between sender and receiver learns that the sender is communicating with the receiver. In particular, your local ISP is in the position to build a complete profile of your Internet usage. In addition, every server in the Internet that can see any of the packets can profile your behavior.
+  In particular, your local ISP is in the position to build a complete profile of your Internet usage. In addition, every server in the Internet that can see any of the packets can profile your behavior.
 
   Excerpted from here:  http://rzuwtpc4wb3xdzrj3yeajsvm3fkq4vbeubm2tdxaqruzzzgs5dwemlad.onion/index.html#protections
 -->
+
 ---
 # So what does Tor do differently?
-
-When you use the Tor network, your internet service provider (ISP) won't be able to track the names and address of the websites you visit, instead they'll only see you're connecting to the Tor network. And the websites you visit will see a connection coming from the Tor network instead of your real IP address.
-
-[TODO] Figure out which description to go with.
-
-The primary goal of Tor is to improve your privacy by sending your traffic through a series of proxies. It aims to solve three privacy concerns:
-
-- First, Tor prevents websites and other services from learning your location, which they can use to build databases about your habits and interests.
-- Second, Tor prevents people watching your traffic locally (such as your ISP or someone with access to your home wifi or router) from learning what information you're fetching and where you're fetching it from. It also stops them from deciding what you're allowed to learn and publish.
-- Third, Tor routes your connection through more than one Tor relay so no single relay can learn what you're up to. Because these relays are run by different individuals or organizations, distributing trust provides more security than the old one hop proxy approach.
-
-![width:400px](./images/how-tor-works-simple.png)
-
----
-
-# So how does Tor work?
 
 ![width:1100px](./images/catnip-03-relay-network.png)
 
 <!-- From Catnip guide:
-  Any computer can run the Tor software and become a node. Think of Tor nodes like data checkpoints which take in, treat, and ship out packets traveling over the Tor network. A Tor circuit Using Tor, data packets are sent over the Internet’s infrastructure like any other packet. But packets traveling through the Tor network are routed randomly through three nodes (also called relays or hops) before reaching their final destination. This route, called Tor circuit, is changed every ten minutes to make it harder to observe for potential eavesdroppers. To route the packets down a random path, they are packed like an onion: each is wrapped into three encrypted layers containing a dedicated packet tag. But only a partial route is encoded on these tags, so that none of the relays know the entire path a packet takes. At each relay a single layer is peeled off and the packet is then sent to the next relay written on the tag of the underlying layer. This unwrapping and preparing to relay the packets is managed by the Tor software of the node. All that is visible from the outside is that obscure cargo is sent from place to place. Because of this, the Tor network is often pejoratively called the “dark net”. When we say that Tor packet layers are encrypted, it means that only the relay with the correct private encryption key is able to unwrap the corresponding layer.
+  Any computer can run the Tor software and become a node. Think of Tor nodes like data checkpoints which take in, treat, and ship out packets traveling over the Tor network.
+  
+  Using Tor, data packets are sent over the Internet’s infrastructure like any other packet. But packets traveling through the Tor network are routed randomly through three nodes (also called relays or hops) before reaching their final destination.
+  
+  This route, called Tor circuit, is changed every ten minutes to make it harder to observe for potential eavesdroppers. To route the packets down a random path, they are packed like an onion: each is wrapped into three encrypted layers containing a dedicated packet tag. But only a partial route is encoded on these tags, so that none of the relays know the entire path a packet takes. At each relay a single layer is peeled off and the packet is then sent to the next relay written on the tag of the underlying layer. This unwrapping and preparing to relay the packets is managed by the Tor software of the node. 
+  
+  All that is visible from the outside is that obscure cargo is sent from place to place. Because of this, the Tor network is often pejoratively called the “dark net”. When we say that Tor packet layers are encrypted, it means that only the relay with the correct private encryption key is able to unwrap the corresponding layer.
 
-  There are a bunch of caveats that are important to know about Tor!
 -->
+
 ---
 
-# So how does Tor work?
+# So what does Tor do differently?
 
 ![width:1125px](./images/https-onion-routing.png)
 
@@ -211,31 +229,35 @@ The primary goal of Tor is to improve your privacy by sending your traffic throu
 
   There are three layers of encryption, one per node, so each relay only knows where the next location that it's sending the request. (Like a relay race!) Relays are run by volunteers throughout the world (so there's distributed trust) and they have IP addresses that are listed publically.
 
-  The aim of Tor is to improve your privacy by sending your traffic through a series of proxies. Your communication is encrypted in multiple layers and routed via multiple hops through the Tor network to the final receiver. More details on this process can be found in this visualization. Note that all your local ISP can observe now is that you are communicating with Tor nodes. Similarly, servers in the Internet just see that they are being contacted by Tor nodes.
+  *FAQ from the Tor Project*
+  Q: What attacks remain against onion routing?
 
-  More info about how nodes in the Tor network work: https://community.torproject.org/relay/types-of-relays/
+  A: As mentioned above, it is possible for an observer who can view both you and either the destination website or your Tor exit node to correlate timings of your traffic as it enters the Tor network and also as it exits. Tor does not defend against such a threat model.
+
+  In a more limited sense, note that if a censor or law enforcement agency has the ability to obtain specific observation of parts of the network, it is possible for them to verify a suspicion that you talk regularly to your friend by observing traffic at both ends and correlating the timing of only that traffic. Again, this is only useful to verify that parties already suspected of communicating with one another are doing so. In most countries, the suspicion required to obtain a warrant already carries more weight than timing correlation would provide.
+
+  Furthermore, since Tor reuses circuits for multiple TCP connections, it is possible to associate non anonymous and anonymous traffic at a given exit node, so be careful about what applications you run concurrently over Tor. Perhaps even run separate Tor clients for these applications.
 -->
 
 ---
-# So... how does an onion site work?
 
-[TODO]: Flush out this slide more!
+# That's cool! So how do onion sites fit in?
 
-When you create an onion site, you get a `hostname`, a public key, and a private key. An onion service's IP address is protected.
+An onion site is a website that's only accessible over the Tor network. The communication between a client and a server never leave the Tor network, so both the client and server can remain anonymous. An onion site's IP address is never made available to the requesting client.
 
-The technical details of onion sites are so cool!
+The technology and content of onion sites are decentralized, so there isn't a central authority that determines what content is accessible and what isn't.
 
-<!-- Thorough overview: http://xmrhfasfg5suueegrnc4gsgyi2tyclcy5oz7f5drnrodmdtob6t2ioyd.onion/onion-services/overview/index.html -->
+When you create an onion site, you get a `hostname`, a public key, and a private key, all of which are used to encrypt communications and communicate with the Tor network.
 
-<!-- 
-  Previous slide: A website that's only accessible over the Tor network. The communication between a client and a server never leave the Tor network, so both the client and server can remain anonymous. The technology and content of onion sites are decentralized, so there isn't a central authority that determines what content is accessible and what isn't.
+There's a more [detailed breakdown](https://torproject.org/onion-services/overview/index.html) ([onion link](http://xmrhfasfg5suueegrnc4gsgyi2tyclcy5oz7f5drnrodmdtob6t2ioyd.onion/onion-services/overview/index.html)) on The Tor Project.
 
+<!--
   Onion sites are also great for network health and sustainability, bc they don't add to the traffic on exit nodes, where there can be bottlenecks. When a user visits a particular onion, they know that the content they are seeing can only come from that particular onion. (No man-in-the-middle DNS attacks are possible.)
 
   Onion mirrors (NYTimes, Markup, Facebook, Twitter) also make sure that sites are accessible where they might be censored.
- -->
 
-[Detailed breakdown](https://torproject.org/onion-services/overview/index.html) ([onion link](http://xmrhfasfg5suueegrnc4gsgyi2tyclcy5oz7f5drnrodmdtob6t2ioyd.onion/onion-services/overview/index.html))
+   TODO: Add a note about p2p uses!
+ -->
 
 ---
 
@@ -250,29 +272,20 @@ The technical details of onion sites are so cool!
 ## Let's head over to Github for the instructions! https://github.com/lizzthabet/itp-onion-demo
 
 ---
-# Resources
+# An extremely non-exhaustive list of more resources
 
-## More on onion sites
+[Tech Learning Collective](https://techlearningcollective.com/): Technology education for radical organizers and revolutionary communities
+
+[Metro's Decentralized Web series](https://metro.org/decentralizedweb)
+
+[Beaker Browser](https://beakerbrowser.com/): Experimental p2p browser
+
+
+## Specific to onion sites
 - [How to make any site an onion site](https://github.com/alecmuffett/eotk)
-- https://community.torproject.org/onion-services/: Great overview of onion sites
-- https://riseup.net/en/security/network-security/tor/onionservices-best-practices
-- https://github.com/s-rah/onionscan
-
-## Tech education
- - Tech Learning Collective
- 
-- [Metro's Decentralized Web series](https://metro.org/decentralizedweb)
-
-  - p2p stuffs:
-    - Beaker Browser and Hypercore protocol
-    - Dat protocol
-
-## Further reading on Tor
-- http://eweiibe6tdjsdprb4px6rqrzzcsi22m4koia44kc5pcjr7nec2rlxyad.onion/tpo/onion-services/onionprobe: Onionprobe
-
-### Tor source:
-- http://eweiibe6tdjsdprb4px6rqrzzcsi22m4koia44kc5pcjr7nec2rlxyad.onion/tpo/core/tor: Tor on Gitlab
-- http://eweiibe6tdjsdprb4px6rqrzzcsi22m4koia44kc5pcjr7nec2rlxyad.onion/tpo/applications/tor-browser: Tor Browser on Gitlab
+- [In-depth technical overview of onion sites](https://community.torproject.org/onion-services/)
+- [Best practices for onion sites](https://riseup.net/en/security/network-security/tor/onionservices-best-practices)
+- [Evaluate your onion site's vulnerabilities with Onionscan](https://github.com/s-rah/onionscan)
 
 ---
 
