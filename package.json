@@ -1,0 +1,15 @@
+{
+  "name": "presentation",
+  "version": "1.0.0",
+  "description": "Let's peel an onion! An introduction to Tor (ITP Camp 2022)",
+  "main": "slides.md",
+  "author": "Lizz Thabet",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@marp-team/marpit": "^2.3.1"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^2.0.4"
+  }
+}
