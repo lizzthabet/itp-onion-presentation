@@ -54,7 +54,7 @@ The demo code: https://github.com/lizzthabet/itp-onion-demo
 
 ---
 <!-- header: 🧅 An introduction to Tor -->
-<!-- _footer: TODO: If I get time, there will be onion jokes! -->
+<!-- _footer: There are onion jokes down here 🕵🏻‍♂️ -->
 
 # Demo checklist
 
@@ -74,6 +74,8 @@ There will be two demo options: one more beginner and one more intermediate. If 
 - A way to run a web server locally, like python or nginx
 
 ---
+
+<!-- _footer: What do you say to a small onion that has helped you? Thanks shallot. -->
 
 # What we'll do today
 
@@ -95,8 +97,8 @@ Tor is a free and open source software for (more) anonymous communication.
 
 ## Outline
 
-- Demo checklist (✅)
-- Define our goals (✅)
+- Demo checklist ✅
+- Define our goals ✅
 - Review common terms and why you'd use Tor
 - Break down the Tor ecosystem
 - Overview of the Internet (as we know it) works
@@ -119,6 +121,8 @@ Tor is a free and open source software for (more) anonymous communication.
 
 ---
 
+<!-- _footer: I just saw an onion ring ... so I answered it. -->
+
 # Let's define some terms
 
 But first, let's define some general terms and concepts.
@@ -133,12 +137,13 @@ Each device on a network has a unique **IP address**, which is like a mailing ad
 
 A **proxy** is another server that acts as an intermediary between clients and servers. A forward proxy (that forwards a request) is also called a tunnel or a gateway.
 
-
 <!-- Extra notes:
   With HTTPS, the data that the client sends with its request to the server is encrypted, so only the client and the server can read it.
 -->
 
 ---
+
+<!-- _footer: What do you call an edible ion? An onion. -->
 
 # Why use Tor?
 
@@ -152,7 +157,7 @@ There are many reasons why someone might use Tor, including:
 
 ... and other reasons!
 
-There are also many caveats to using Tor, which we'll talk about if we have time.
+There are also many caveats and limitations to using Tor, which are important to understand based on your needs.
 
 <!-- 
   From The Tor Project:
@@ -164,6 +169,9 @@ There are also many caveats to using Tor, which we'll talk about if we have time
 -->
 
 ---
+
+<!-- _footer: I just saw an onion ring ... so I answered it. -->
+
 # What is Tor?
 
 The term `Tor` can be used to reference several different things. Let's break that down.
@@ -203,6 +211,9 @@ We're going to borrow from [this wonderful guide](https://catnip.article19.org/d
 -->
 
 ---
+
+<!-- _footer: A botanist visited an onion farm and said to the farmer: "I'm sorry but I think your ground is leeking." -->
+
 # So what does Tor do differently?
 
 ![width:1100px](./images/catnip-03-relay-network.png)
@@ -219,6 +230,8 @@ We're going to borrow from [this wonderful guide](https://catnip.article19.org/d
 -->
 
 ---
+
+<!-- _footer: An opinion without 3.14 is ... just an onion. -->
 
 # So what does Tor do differently?
 
@@ -241,6 +254,8 @@ We're going to borrow from [this wonderful guide](https://catnip.article19.org/d
 
 ---
 
+<!-- _footer: Where do you find an old Onion article? In their archives. -->
+
 # That's cool! So how do onion sites fit in?
 
 An onion site is a website that's only accessible over the Tor network. The communication between a client and a server never leave the Tor network, so both the client and server can remain anonymous. An onion site's IP address is never made available to the requesting client.
@@ -261,9 +276,13 @@ There's a more [detailed breakdown](https://torproject.org/onion-services/overvi
 
 ---
 
-![width:1000px](./images/onion-service-combined-05-09.png)
+<!-- _footer: What kind of chips do you eat in the bath? Shower cream and onion. -->
+
+![width:950px](./images/onion-service-combined-05-09.png)
 
 ---
+
+<!-- _footer: Why does Mr. Potato Head have a mobile? In case Mr. Onion rings. -->
 
 # ✨🧅🌐 Demo 🔗👥🎨
 <br />
@@ -272,7 +291,9 @@ There's a more [detailed breakdown](https://torproject.org/onion-services/overvi
 ## Let's head over to Github for the instructions! https://github.com/lizzthabet/itp-onion-demo
 
 ---
-# An extremely non-exhaustive list of more resources
+
+<!-- _footer: What do you call an onion that won’t hold water? A leek. -->
+# An extremely non-exhaustive list of additional resources
 
 [Tech Learning Collective](https://techlearningcollective.com/): Technology education for radical organizers and revolutionary communities
 
