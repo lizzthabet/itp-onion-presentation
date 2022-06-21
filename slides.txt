@@ -49,7 +49,9 @@ Their stated mission is:
 
 ---
 
-Ask people if they'd like to review how the Internet works! This slide could be skipped depending on time and everyone's knowledge.
+Ask folks how is very comfortable with their understanding of the internet. This slide could be skipped depending on time and everyone's knowledge.
+
+  This guide in particular is focused on the privacy and censorship, so you'll see that emphasized in how it talks about the technology of the Internet and Tor.
 
   In particular, your local ISP is in the position to build a complete profile of your Internet usage. In addition, every server in the Internet that can see any of the packets can profile your behavior.
 
@@ -59,12 +61,14 @@ Ask people if they'd like to review how the Internet works! This slide could be 
 
 From Catnip guide:
   Any computer can run the Tor software and become a node. Think of Tor nodes like data checkpoints which take in, treat, and ship out packets traveling over the Tor network.
-  
-  Using Tor, data packets are sent over the Internet’s infrastructure like any other packet. But packets traveling through the Tor network are routed randomly through three nodes (also called relays or hops) before reaching their final destination.
-  
-  This route, called Tor circuit, is changed every ten minutes to make it harder to observe for potential eavesdroppers. To route the packets down a random path, they are packed like an onion: each is wrapped into three encrypted layers containing a dedicated packet tag. But only a partial route is encoded on these tags, so that none of the relays know the entire path a packet takes. At each relay a single layer is peeled off and the packet is then sent to the next relay written on the tag of the underlying layer. This unwrapping and preparing to relay the packets is managed by the Tor software of the node. 
-  
-  All that is visible from the outside is that obscure cargo is sent from place to place. Because of this, the Tor network is often pejoratively called the “dark net”. When we say that Tor packet layers are encrypted, it means that only the relay with the correct private encryption key is able to unwrap the corresponding layer.
+
+  Using Tor, data packets are sent over the Internet like any other packet. But packets traveling through the Tor network are routed randomly through three nodes (also called relays or hops) before reaching their final destination.
+
+  To route the packets down a random path, they are packed like an onion: each is wrapped into three encrypted layers containing a dedicated packet tag. (When we say that Tor packet layers are encrypted, it means that only the relay with the correct private encryption key is able to unwrap the corresponding layer.) But only a partial route is encoded on these tags, so that none of the relays know the entire path a packet takes. At each relay a single layer is peeled off and the packet is then sent to the next relay written on the tag of the underlying layer. This unwrapping and preparing to relay the packets is managed by the Tor software of the node.
+
+  This route, called Tor circuit, is changed every ten minutes to make it harder to observe for potential eavesdroppers.
+
+  All that is visible from the outside is that obscure cargo is sent from place to place. Because of this, the Tor network is often pejoratively called the “dark net”.
 
 ---
 
@@ -88,7 +92,11 @@ Onion sites are also great for network health and sustainability, bc they don't 
 
   Onion mirrors (NYTimes, Markup, Facebook, Twitter) also make sure that sites are accessible where they might be censored.
 
-   TODO: Add a note about p2p uses!
+  TODO: Add a note about p2p uses!
+
+---
+
+
 
 ---
 
